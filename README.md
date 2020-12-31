@@ -1,4 +1,4 @@
-# template__docker-laravel-vue-cli
+# docker Laravel + vue-cli
 
 ## 概要
 dockerを用いてlaravelとvue-cliを動かすための環境リポジトリ
