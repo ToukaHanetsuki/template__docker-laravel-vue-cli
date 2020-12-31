@@ -6,71 +6,63 @@ dockerを用いてlaravelとvue-cliを動かすための環境リポジトリ
 | 項目 | バージョン |
 | --- | --- |
 | Laravel | 6.20.8 |
+| node | 12.8.0 |
+| npm | 6.14.10 |
+| yarn | 1.22.5 |
 | @vue/cli | 4.5.9 |
 | vue | 2.6.11 |
+| typescript | 4.1.3 |
 | MySQL | 5.7.31 |
 
 ## Set Up
+### All set up
+```bash
+$ make setup
+```
 
 ### Backend
 
 #### コンテナの作成・起動
 ```bash
-$ docker-compose up -d --build
+$ make up
 ```
-
-| オプション | 説明 |
-| --- | --- |
-| -d | バックグラウンドで実行 |
-| --build | 変更点があればビルド、なければキャッシュを利用する |
 
 #### コンテナへ入る
 ```bash
-$ docker-compose exec app bash
+$ make bash
 ```
 
-#### .envの用意
+#### vendorのインストール
 ```bash
-# コンテナ内で実施
-$ cp .env.example .env
-$ php artisan key:generate # APP_KEYの作成
+$ make backend/install
 ```
 
-#### vendorをインストール
+#### マイグレーションの実施
 ```bash
-# コンテナ内で実施
-$ composer install
-```
-
-#### migrationの実施
-```bash
-# コンテナ内で実施
-$ php artisan migrate
+$ make backend/migrate
 ```
 
 ### Frontend
 
-#### フロントエンドの作業ディレクトリへの移動
-```bash
-$ cd frontend
-```
-
 #### node_modulesのインストール
 ```bash
+# ./frontend/で実施
 $ yarn install
 ```
 
 #### dev serverの起動
 ```bash
+# ./frontend/で実施
 $ yarn serve
 ```
 
 #### productionコンパイル
 ```bash
+# ./frontend/で実施
 $ yarn build
 ```
 
-## Command
+## Commands
 
 ### mysqlへの接続
 ```bash
