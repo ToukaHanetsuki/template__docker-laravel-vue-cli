@@ -9,9 +9,9 @@ module.exports = {
       }
     }
   },
-  outputDir: path.resolve(__dirname, '../backend/public'),
+  outputDir: path.resolve(__dirname, '../server/public'),
   indexPath: process.env.NODE_ENV === 'production'
-    ? `${path.resolve(__dirname, '../backend/resources/views')}/index.blade.php`
+    ? `${path.resolve(__dirname, '../server/resources/views')}/index.blade.php`
     : 'index.html',
   productionSourceMap: false
 }

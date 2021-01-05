@@ -20,7 +20,7 @@ dockerを用いてlaravelとvue-cliを動かすための環境リポジトリ
 $ make setup
 ```
 
-### Backend
+### server
 
 #### コンテナの作成・起動
 ```bash
@@ -34,31 +34,31 @@ $ make bash
 
 #### vendorのインストール
 ```bash
-$ make backend/install
+$ make server/install
 ```
 
 #### マイグレーションの実施
 ```bash
-$ make backend/migrate
+$ make server/migrate
 ```
 
-### Frontend
+### web
 
 #### node_modulesのインストール
 ```bash
-# ./frontend/で実施
+# ./web/で実施
 $ yarn install
 ```
 
 #### dev serverの起動
 ```bash
-# ./frontend/で実施
+# ./web/で実施
 $ yarn serve
 ```
 
 #### productionコンパイル
 ```bash
-# ./frontend/で実施
+# ./web/で実施
 $ yarn build
 ```
 

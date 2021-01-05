@@ -4,7 +4,7 @@ services:
   app:
     build: ./.container/workspace
     volumes:
-      - ./backend:/workspace
+      - ./server:/workspace
       - vendor-store:/workspace/vendor
 
   nginx:
@@ -12,7 +12,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./backend:/workspace
+      - ./server:/workspace
       - ./.container/nginx/default.conf:/etc/nginx/conf.d/default.conf
     working_dir: /workspace
 
